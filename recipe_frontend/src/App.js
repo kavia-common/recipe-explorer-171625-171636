@@ -1,47 +1,44 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import AppRouter from './router/Router';
+import Header from './components/layout/Header';
+import { useStore } from './state/store';
 
+/**
+ * Root App component that sets up the theme and renders the main layout with Router.
+ * Applies Ocean Professional theme via CSS variables and supports dark mode.
+ */
 // PUBLIC_INTERFACE
 function App() {
   const [theme, setTheme] = useState('light');
+  const { state } = useStore();
 
-  // Effect to apply theme to document element
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
   // PUBLIC_INTERFACE
   const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
   };
 
+  // aria-live region updates when results count changes
+  const resultsCount = state.recipes.filtered.length;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <button 
-          className="theme-toggle" 
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-        >
-          {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
-        </button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Current theme: <strong>{theme}</strong>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-shell">
+      <Header onToggleTheme={toggleTheme} theme={theme} />
+      <main id="main" className="main-content" role="main" aria-labelledby="page-title">
+        <div className="visually-hidden" aria-live="polite">
+          {resultsCount} results
+        </div>
+        <AppRouter />
+      </main>
+      <footer className="footer" role="contentinfo">
+        <div className="container">
+          <small>&copy; {new Date().getFullYear()} Recipe Explorer</small>
+        </div>
+      </footer>
     </div>
   );
 }

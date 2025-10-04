@@ -1,8 +1,16 @@
 import { render, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import { StoreProvider } from './state/store';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders header brand and navigation', () => {
+  render(
+    <BrowserRouter>
+      <StoreProvider>
+        <App />
+      </StoreProvider>
+    </BrowserRouter>
+  );
+  expect(screen.getByLabelText(/Recipe Explorer Home/i)).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /Switch to/i })).toBeInTheDocument();
 });

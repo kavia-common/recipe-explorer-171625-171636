@@ -1,0 +1,14 @@
+import { useEffect, useState } from 'react';
+
+/**
+ * PUBLIC_INTERFACE
+ * useDebounce returns a debounced value after delay.
+ */
+export default function useDebounce(value, delay = 300) {
+  const [v, setV] = useState(value);
+  useEffect(() => {
+    const t = setTimeout(() => setV(value), delay);
+    return () => clearTimeout(t);
+  }, [value, delay]);
+  return v;
+}

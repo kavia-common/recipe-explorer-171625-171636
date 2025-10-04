@@ -1,0 +1,68 @@
+[
+  {
+    "id": "r1",
+    "title": "Spaghetti Carbonara",
+    "image": "https://images.unsplash.com/photo-1523986371872-9d3ba2e2f642?q=80&w=1200&auto=format&fit=crop",
+    "cuisine": "Italian",
+    "diet": null,
+    "time": 25,
+    "rating": 4.6,
+    "tags": ["pasta", "comfort", "quick"],
+    "steps": ["Boil pasta", "Cook pancetta", "Mix eggs and cheese", "Combine off heat"]
+  },
+  {
+    "id": "r2",
+    "title": "Veggie Tacos",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop",
+    "cuisine": "Mexican",
+    "diet": "Vegetarian",
+    "time": 20,
+    "rating": 4.3,
+    "tags": ["taco", "vegetarian", "quick"],
+    "steps": ["Prepare veggies", "Warm tortillas", "Assemble tacos", "Serve with salsa"]
+  },
+  {
+    "id": "r3",
+    "title": "Butter Chicken",
+    "image": "https://images.unsplash.com/photo-1617191518809-6c2e2fdb59bd?q=80&w=1200&auto=format&fit=crop",
+    "cuisine": "Indian",
+    "diet": null,
+    "time": 45,
+    "rating": 4.8,
+    "tags": ["curry", "spicy", "creamy"],
+    "steps": ["Marinate chicken", "Cook sauce", "Simmer with chicken", "Garnish and serve"]
+  },
+  {
+    "id": "r4",
+    "title": "Stir-Fry Noodles",
+    "image": "https://images.unsplash.com/photo-1617191519105-2e51a8acd5bb?q=80&w=1200&auto=format&fit=crop",
+    "cuisine": "Chinese",
+    "diet": null,
+    "time": 15,
+    "rating": 4.1,
+    "tags": ["noodles", "quick", "weeknight"],
+    "steps": ["Boil noodles", "Stir-fry veggies", "Add sauce", "Combine and serve"]
+  },
+  {
+    "id": "r5",
+    "title": "Mediterranean Quinoa Salad",
+    "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1200&auto=format&fit=crop",
+    "cuisine": "Mediterranean",
+    "diet": "Vegan",
+    "time": 30,
+    "rating": 4.7,
+    "tags": ["salad", "healthy", "vegan", "gluten-free"],
+    "steps": ["Cook quinoa", "Chop veggies", "Make dressing", "Toss and chill"]
+  },
+  {
+    "id": "r6",
+    "title": "Keto Grilled Chicken",
+    "image": "https://images.unsplash.com/photo-1544025164-5876d6a02f3e?q=80&w=1200&auto=format&fit=crop",
+    "cuisine": "Mediterranean",
+    "diet": "Keto",
+    "time": 35,
+    "rating": 4.4,
+    "tags": ["keto", "grill", "protein"],
+    "steps": ["Season chicken", "Grill to temp", "Rest and slice"]
+  }
+]
